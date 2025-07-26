@@ -1,0 +1,119 @@
+.sidebar {
+  position: fixed;
+  width: 0;
+  min-width: 126px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: aquamarine;
+  background: var(--unnamed-color-040404) 0% 0% no-repeat padding-box;
+  background: #040404 0% 0% no-repeat padding-box;
+  transition: all .6s linear;
+  color: var(--unnamed-color-f1f1f1);
+  padding: 60px 0 65px 38px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.hovered {
+  background: transparent linear-gradient(90deg, var(--unnamed-color-040404) 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
+  width: 350px;
+}
+
+.userInfo {
+  margin-bottom: 50px;
+  opacity: 0;
+  transition: 0.6 ease-out;
+}
+
+.navBarItem, .userInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.navBarItem {
+  border-radius: 12px;
+}
+
+.userImage, .icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+
+.userImage {
+  object-fit: cover;
+}
+
+.userName {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-32)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-tajawal);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: none;
+}
+
+.isActive .icon {
+  background-color: var(--unnamed-color-3b486d);
+}
+
+.iconText {
+  width: 0;
+  /* opacity: 0; */
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-36)/var(--unnamed-line-spacing-43) var(--unnamed-font-family-tajawal);
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+.navBarItem:hover {
+  background-color: var(--unnamed-color-3b486d);
+}
+
+.navBarItem:hover .iconText {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-36)/var(--unnamed-line-spacing-43) var(--unnamed-font-family-tajawal);
+}
+
+.settings {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 65px 0;
+}
+
+.settings a {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-42) var(--unnamed-font-family-tajawal);
+  letter-spacing: var(--unnamed-character-spacing-4-8);
+  color: var(--unnamed-color-858688);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4.8px;
+}
+
+.hovered .userInfo, .hovered .settings{
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+.hovered .iconText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hovered .isActive .icon {
+  background-color: transparent;
+}
