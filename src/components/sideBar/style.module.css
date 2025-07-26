@@ -9,11 +9,12 @@
   padding: 60px 38px 65px;
   background: #040404 0% 0% no-repeat padding-box;
   color: var(--color-f1f1f1);
-  transition: all 0.6s linear;
+  transition: all 0.4s linear;
 }
 
 .hovered {
   width: 400px;
+  padding: 60px 0 65px 38px;
   background: transparent linear-gradient(
     90deg,
     #040404 0%,
@@ -49,9 +50,8 @@
 /* User Info */
 .userInfo {
   margin-bottom: 50px;
-  width: 0;
+  /* width: 0; */
   opacity: 0;
-  transition: 0.6s ease-out;
 }
 
 /* User Image & Icon */
@@ -86,14 +86,15 @@
 
 /* Icon Text */
 .iconText {
-  display: none;
-  width: 0;
+  transform: translateX(-2000px);
   padding-right: 20px;
   white-space: nowrap;
   font: var(--font-style-normal) normal var(--font-weight-normal)
     var(--font-size-36)/var(--line-spacing-43)
     var(--font-family-tajawal);
+  transition: all 0.3px linear;
 }
+
 
 /* User Name */
 .userName {
@@ -128,13 +129,10 @@
 .hovered .settings {
   width: auto;
   opacity: 1;
-  transition: all 1s ease;
 }
 
 .hovered .iconText {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+  transform: translateX(0);
 }
 
 .hovered .isActive .icon {
