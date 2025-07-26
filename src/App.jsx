@@ -96,7 +96,7 @@ function App() {
               src={coverImagePath}
               alt={featuredMovie.Title}
               className='featured-bg-image'
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}
             />
             :
             <video
