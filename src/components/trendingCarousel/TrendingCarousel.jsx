@@ -1,22 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import data from '../../data/data.json';
 const images = import.meta.glob('/src/assets/*.png', { eager: true });
 
-export default function TrendingCarousel() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    const trending = data.TendingNow
-      .slice()
-      .sort((a, b) => new Date(b.Date) - new Date(a.Date))
-      .slice(0, 50);
-    setMovies(trending);
-    console.log(trending)
-  }, []);
-
-  
-
+export default function TrendingCarousel({ movies, handleMovieClick }) { 
   const settings = {
     dots: false,
     arrows: false,
@@ -38,7 +23,7 @@ export default function TrendingCarousel() {
         {movies.map((movie) => {
           const imagePath = images[`/src/assets/${movie.CoverImage}`]?.default;
           return (
-            <div key={movie.Id} className='slider-item'>
+            <div key={movie.Id} className='slider-item' onClick={() => handleMovieClick(movie)}>
               <img src={imagePath} alt={movie.Title} />
             </div>
           );
