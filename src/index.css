@@ -153,3 +153,36 @@
 .gradientBG.hover {
   width: 100%;
 }
+
+@media only screen and (max-width: 890px) {
+  .featured-movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-logo {
+    height: 50px;
+  }
+
+  .general-info p {
+    font: normal normal normal 20px/20px Tajawal;
+  }
+
+  .action-buttons button {
+    width: 188px;
+    height: 47px;
+    font: normal normal bold 22px/30px Tajawal;
+  }
+
+  .featured-movie-info {
+    padding: 10px;
+  }
+
+  .trending-now-container {
+    width: 100vw;
+    padding: 0 5px;
+  }
+
+}
+

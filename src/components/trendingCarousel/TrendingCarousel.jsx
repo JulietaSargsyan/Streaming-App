@@ -14,9 +14,9 @@ export default function TrendingCarousel({ movies, handleMovieClick }) {
       { breakpoint: 1600, settings: { slidesToShow: 6 } },
       { breakpoint: 1400, settings: { slidesToShow: 5 } },
       { breakpoint: 1200, settings: { slidesToShow: 4 } },
-      { breakpoint: 980, settings: { slidesToShow: 3 } },
-      { breakpoint: 760, settings: { slidesToShow: 2 } },
-      { breakpoint: 560, settings: { slidesToShow: 1 } }
+      { breakpoint: 980, settings: { slidesToShow: 4 } },
+      { breakpoint: 760, settings: { slidesToShow: 3 } },
+      { breakpoint: 560, settings: { slidesToShow: 2 } }
     ]
   };
 
