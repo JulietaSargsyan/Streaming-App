@@ -12,6 +12,7 @@ function App() {
   const [featuredMovie, setFeaturedMovie] = useState(data.Featured);
   const [showVideoBackground, setShowVideoBackground] = useState(false);
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const coverImagePath = images[`/src/assets/${featuredMovie.CoverImage}`]?.default;
   const titleImagePath = images[`/src/assets/${featuredMovie.TitleImage}`]?.default;
@@ -56,6 +57,7 @@ function App() {
   }, []);
 
   function onMovieClick(movie) {
+    setVideoLoaded(false);
     setFeaturedMovie(movie);
     setShowVideoBackground(false);
 
@@ -90,23 +92,41 @@ function App() {
       <SideBar sideBarActive={sideBarActive} setSideBarActive={setSideBarActive}/>
       <main>
         <div className='featured-movie-container'>
-          { !showVideoBackground 
+          { !showVideoBackground
             ?
             <img
               src={coverImagePath}
               alt={featuredMovie.Title}
               className='featured-bg-image'
-              style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}
             />
-            :
-            <video
-              src={featuredMovie.VideoUrl}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: -1 }}
-            />
+            : (
+                <>
+                  {!videoLoaded && (
+                    <img
+                      src={coverImagePath}
+                      alt={featuredMovie.Title}
+                      className='featured-bg-image'
+                    />
+                  )}
+                  <video
+                    src={featuredMovie.VideoUrl}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onCanPlay={() => setVideoLoaded(true)}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      zIndex: -2,
+                    }}
+                  />
+                </>
+              )
           }
           <div className='featured-movie-info'>
             <h3 className='category'>{featuredMovie.Category}</h3>
