@@ -150,7 +150,7 @@ function App() {
           <TrendingCarousel movies={trendingMovies} handleMovieClick={onMovieClick}/>
         </div>
       </main>
-      <div className={`${sideBarActive ? 'gradientBG' : ''}`}></div>
+      <div className={`gradientBG ${sideBarActive ? 'hover' : ''}`}></div>
     </div>
   )
 }

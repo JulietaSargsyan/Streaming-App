@@ -47,9 +47,9 @@
     var(--font-family-tajawal);
 }
 
-.userInfo, .iconText, .settings {
+.userInfo, .settings {
   transform: translateX(-500px);
-  transition: all 0.4s linear;
+  transition: all 0.3s linear;
 }
 
 
@@ -91,6 +91,7 @@
 
 /* Icon Text */
 .iconText {
+  transform: translateX(-500px);
   padding-right: 20px;
   white-space: nowrap;
   font: var(--font-style-normal) normal var(--font-weight-normal)
@@ -134,4 +135,47 @@
 
 .hovered .isActive .icon {
   background-color: transparent;
+}
+
+/* Media queries */
+@media only screen and (max-height: 890px) {
+  .sidebar {
+    padding: 20px;
+    width: 124px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hovered {
+    width: 350px;
+    padding: 20px 0 20px 20px;
+  }
+
+  .settings {
+    position: static;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-height: 750px) {
+  .sidebar {
+    padding: 20px;
+    width: 100px;
+  }
+
+  .hovered {
+    width: 300px;
+    padding: 20px 0 20px 20px;
+  }
+ .userInfo {
+    margin-bottom: 20px;
+  }
+
+  .userImage,
+  .icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
 }
