@@ -47,10 +47,15 @@
     var(--font-family-tajawal);
 }
 
+.userInfo, .iconText, .settings {
+  transform: translateX(-500px);
+  transition: all 0.4s linear;
+}
+
+
 /* User Info */
 .userInfo {
   margin-bottom: 50px;
-  opacity: 0;
 }
 
 /* User Image & Icon */
@@ -81,17 +86,16 @@
 
 .isActive .icon {
   background-color: var(--color-3b486d);
+  transition: all 0.2s linear;
 }
 
 /* Icon Text */
 .iconText {
-  transform: translateX(-2000px);
   padding-right: 20px;
   white-space: nowrap;
   font: var(--font-style-normal) normal var(--font-weight-normal)
     var(--font-size-36)/var(--line-spacing-43)
     var(--font-family-tajawal);
-  transition: all 0.3px linear;
 }
 
 
@@ -109,8 +113,6 @@
   display: flex;
   flex-direction: column;
   padding: 65px 0;
-  width: 0;
-  opacity: 0;
 }
 
 .settings a {
@@ -124,13 +126,9 @@
 }
 
 /* Hovered State */
-.hovered .userInfo,
+.hovered .userInfo, 
+.hovered .iconText, 
 .hovered .settings {
-  width: auto;
-  opacity: 1;
-}
-
-.hovered .iconText {
   transform: translateX(0);
 }
 
